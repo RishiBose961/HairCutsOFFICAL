@@ -13,7 +13,7 @@ const Activatelayout = () => {
     if (activation_token) {
       const activateUser = async () => {
         try {
-          const res = await axios.post('/api/auth/activation', {
+          const res = await axios.post('https://haircutsapp.herokuapp.com/api/auth/activation', {
             activation_token
           })
 
