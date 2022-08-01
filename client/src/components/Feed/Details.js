@@ -30,7 +30,7 @@ const Details = () => {
     })
 
     const data = await res.json();
-    // console.log(data);
+    console.log(data);
 
     if (res.status === 422 || !data) {
       console.log("error");
@@ -43,6 +43,7 @@ const Details = () => {
   useEffect(() => {
     getdata();
   }, [])
+  
 
   const refreshPage = () => {
     window.location.reload();
