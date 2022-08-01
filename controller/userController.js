@@ -217,6 +217,19 @@ const userController = {
             })
     },
 
+    getallshopid: async (req, res) => {
+        try{
+            // console.log(req.params);
+            const {id} =req.params;
+    
+            const userindividual = await ShopAdmin.findById({_id:id});
+            // console.log(userindividual);
+            res.status(201).json(userindividual)
+        }catch(error){
+            res.status(422).json(error)
+        }
+    },
+
 
     signout: async (req, res) => {
         try {
