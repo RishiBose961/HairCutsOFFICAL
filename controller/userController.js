@@ -7,6 +7,9 @@ const User = require('../models/userModel')
 const HairCuts = require('../models/hairModel')
 const ShopAdmin = require('../models/shopAdmin')
 
+const {
+    EMAIL
+} = process.env
 
 const userController = {
     register: async (req, res) => {
@@ -33,7 +36,7 @@ const userController = {
             const newUser = { firstname, lastname, email, phone, password: hashPassword }
             const activation_token = createToken.activation(newUser);
 
-            const url = `http://localhost:3000/api/auth/activate/${activation_token}`
+            const url = `${EMAIL}/api/auth/activate/${activation_token}`
             sendMail.sendEmailRegister(email, url, "Verify your Email")
 
             res.status(200).json({ message: "Welcome ! Please Check your Email" })
