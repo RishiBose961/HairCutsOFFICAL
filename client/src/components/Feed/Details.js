@@ -14,8 +14,16 @@ import { Box, FormControl, InputLabel, Select, TextField, MenuItem, Rating } fro
 
 const Details = () => {
   const { token } = useContext(AuthContext)
+
+
+
+
+
+
+
+
   const { id } = useParams("");
-  // console.log(id);
+  console.log(id);
   const [getuserdata, setgetuserdata] = useState([])
 
 
