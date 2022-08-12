@@ -52,7 +52,7 @@ function App() {
         <Route exact path="/api/auth/activate/:activation_token"
           component={Activatelayout}
         />
-        <Route exact path='/view/:id' component={isLoggedIn? Details :Authlayout}/>
+        <Route exact path='/:id' component={isLoggedIn? Details :Authlayout}/>
       </Switch>
       {/* <Slidebar/>
         <Feed/> */}

@@ -7,27 +7,18 @@ import Container from '@mui/material/Container';
 import Toolbar from '@mui/material/Toolbar';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Button, Divider } from '@mui/material';
+  import { Button, Divider } from '@mui/material';
 import Time from './Time';
 import { Box, FormControl, InputLabel, Select, TextField, MenuItem, Rating } from '@mui/material'
 
 const Details = () => {
   const { token } = useContext(AuthContext)
-
-
-
-
-
-
-
-
   const { id } = useParams("");
-  console.log(id);
+  // console.log(id);
   const [getuserdata, setgetuserdata] = useState([])
 
 
-  const getdata = async (e) => {
+  const getdata = async () => {
 
     const res = await fetch(`/api/auth/getallshopid/${id}`, {
       method: 'GET',

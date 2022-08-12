@@ -57,7 +57,7 @@ const Feed = () => {
                 </CardContent>
               </Card>
               <Box sx={{mt:3}}>
-              <a href={`view/${card._id}`} style={{textDecoration: 'none',color:'white',fontSize:'16px'}}>
+              <a href={`/${card._id}`} style={{textDecoration: 'none',color:'white',fontSize:'16px'}}>
                 <Button fullWidth variant='contained' color="warning" size="small">
                    ⬆ View
                 </Button>
