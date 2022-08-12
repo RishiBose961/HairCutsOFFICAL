@@ -57,11 +57,11 @@ const Feed = () => {
                 </CardContent>
               </Card>
               <Box sx={{mt:3}}>
-              <a href={`/${card._id}`} style={{textDecoration: 'none',color:'white',fontSize:'16px'}}>
+              <Link to={`/${card._id}`} style={{textDecoration: 'none',color:'white',fontSize:'16px'}}>
                 <Button fullWidth variant='contained' color="warning" size="small">
                    ⬆ View
                 </Button>
-                </a>
+                </Link>
               </Box>
 
             </Grid>
