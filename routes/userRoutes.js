@@ -16,6 +16,8 @@ route.patch('/api/auth/user_update',auth, userController.update);
 route.post('/api/auth/createhair',auth,userController.createhair)
 route.get('/api/auth/getorderhair',auth,userController.myhairorder)
 route.get('/api/auth/getallshopid/:id',auth,adminController.getallshopid);
+route.get('/api/auth/getShopid/',userController.getShopId)
+route.get('/api/auth/alluser',userController.allUsers)
 route.get('/api/auth/signout', userController.signout);
 
 

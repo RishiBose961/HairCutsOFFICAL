@@ -38,7 +38,7 @@ const Feed = () => {
           {mypic.map((card) => (
             <Grid item xs={12} sm={6} md={4}>
               <Card
-                sx={{ height: '70%', display: 'flex', flexDirection: 'column' }}
+                sx={{ height: '74%', display: 'flex', flexDirection: 'column',textTransform:"capitalize" }}
               >
                 <CardMedia
                   component="img"
@@ -53,6 +53,9 @@ const Feed = () => {
                   </Typography>
                   <Typography>
                     {card.email}
+                  </Typography>
+                  <Typography>
+                    {card.state}
                   </Typography>
                 </CardContent>
               </Card>

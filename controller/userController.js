@@ -69,8 +69,8 @@ const userController = {
             //check email
             const user = await User.findOne({
                 $or: [
-                    {email },
-                    {phone }
+                    { email },
+                    { phone }
                 ]
             })
 
@@ -214,15 +214,44 @@ const userController = {
     },
 
     getallshopid: async (req, res) => {
-        try{
+        try {
             // console.log(req.params);
-            const {id} =req.params;
-    
-            const userindividual = await ShopAdmin.findById({_id:id});
+            const { id } = req.params;
+
+            const userindividual = await ShopAdmin.findById({ _id: id });
             // console.log(userindividual);
             res.status(201).json(userindividual)
-        }catch(error){
+        } catch (error) {
             res.status(422).json(error)
+        }
+    },
+
+     allUsers : async (req, res) => {
+        const keyword = req.query.search
+          ? {
+              $or: [
+                { shopname: { $regex: req.query.search, $options: "i" } },
+        
+              ],
+            }
+          : {};
+      
+        const users = await ShopAdmin.find(keyword).find({});
+        res.send(users);
+      },
+
+
+    getShopId: async (req, res) => {
+        const { min, max, ...others } = req.query;
+
+        try {
+            const hotels = await ShopAdmin.find({
+                ...others,
+                cheapestPrice: { $gt: min | 1, $lt: max || 9999 } 
+            }).limit(req.query.limit)
+            res.status(200).json(hotels);
+        } catch (error) {
+            res.status(500).json(error)
         }
     },
 

@@ -6,6 +6,7 @@ import Tooltip from '@mui/material/Tooltip';
 import { AuthContext } from '../../context/AuthContext'
 import axios from 'axios';
 import Appbar from '../AppBar/Appbar';
+import Searcj from '../Search/Searcj';
 
 
 const Slidebar = () => {
@@ -27,10 +28,10 @@ const Slidebar = () => {
             <Toolbar sx={{
                 backgroundImage: 'linear-gradient(to left, #ec8a3f, #cba534, #a3ba4b, #74ca76, #2dd6aa);',
                 backgroundColor: '',
-                borderBottom: 1,
+                borderBottom: 0,
                 borderColor: 'divider',
                 paddingTop: 2,
-                paddingBottom: 2,
+                paddingBottom: 1,
                 borderRadius: 8,
                 boxShadow: 'unset'
                 
@@ -44,12 +45,15 @@ const Slidebar = () => {
                     component="h2"
                     variant="h5"
                     color="inherit"
-                    align="center"
+                    align="left"
                     noWrap
                     sx={{ flex: 1 }}
                 >
-                    Hair Cuts
+                   Hair Cuts
+                    
                 </Typography>
+                <Searcj/>
+            
                 
                 <Appbar />
                 <Button
@@ -67,6 +71,7 @@ const Slidebar = () => {
                 sx={{ justifyContent: 'space-between', overflowX: 'auto' }}
             >
             </Toolbar>
+          
         </div>
 
     )
